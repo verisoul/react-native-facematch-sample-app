@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import {WebView} from 'react-native-webview';
 
 
-const env = 'dev' // dev, staging, sandbox, prod
+const env = 'sandbox' // sandbox, prod
 
 const WEB_URL = `app.${env}.verisoul.ai`
 const API_URL = `api.${env}.verisoul.ai`
@@ -36,7 +35,7 @@ export default function App() {
         */
 
         const data = {
-            "session_id": "91021271-a6a2-4127-afb3-eee5e229d531",
+            "session_id": sessionId,
             "account_id": "1234567890",
         }
 
