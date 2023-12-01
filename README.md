@@ -18,3 +18,8 @@ npm install
 Run the app via Expo either on a simulator or a physical device
 ```console
 npx expo start
+```
+
+## Documentation
+
+See [Proof of Human Docs](https://docs.verisoul.ai/page/proof-of-human) for more information
