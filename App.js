@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import {WebView} from 'react-native-webview';
-
+import {Camera} from "expo-camera"
 
 const env = 'sandbox' // sandbox, prod
 
@@ -109,8 +109,19 @@ export default function App() {
         }
     }
 
+    const requestCameraPermission = async () => {
+        const {status} = await Camera.requestCameraPermissionsAsync()
+        if (status !== 'granted') {
+            alert('Sorry, we need camera permissions to make this work!')
+        } else {
+            console.log("Camera permission granted")
+        }
+    };
+
+
     useEffect(() => {
         getSession()
+        requestCameraPermission()
     }, []);
 
 
@@ -137,6 +148,8 @@ export default function App() {
                 source={{uri: `https://${WEB_URL}?session_id=${sessionId}`}}
                 onNavigationStateChange={onNavigationStateChange}
                 style={styles.webView}
+                allowsInlineMediaPlayback={ true }
+                mediaPlaybackRequiresUserAction={ false }
             />
         </View>
     );
