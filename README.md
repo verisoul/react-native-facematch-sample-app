@@ -1,4 +1,4 @@
-# react-native-poh-sample-app
+# react-native-zerokyc-sample-app
 
 ## Getting started
 
