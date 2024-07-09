@@ -22,4 +22,4 @@ npx expo start
 
 ## Documentation
 
-See [FaceMatch docs](https://docs.verisoul.ai/page/proof-of-human) for more information
+See [FaceMatch docs](https://docs.zerokyc.verisoul.ai/) for more information
