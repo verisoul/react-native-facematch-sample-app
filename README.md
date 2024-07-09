@@ -1,4 +1,4 @@
-# react-native-zerokyc-sample-app
+# react-native-facematch-sample-app
 
 ## Getting started
 
@@ -22,4 +22,4 @@ npx expo start
 
 ## Documentation
 
-See [Proof of Human Docs](https://docs.verisoul.ai/page/proof-of-human) for more information
+See [FaceMatch docs](https://docs.verisoul.ai/page/proof-of-human) for more information
