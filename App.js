@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import {WebView} from 'react-native-webview';
 import {Camera} from "expo-camera"
 
-const env = 'sandbox' // sandbox, prod
+const env = 'sandbox' // {sandbox, prod}
 
 const WEB_URL = `app.${env}.verisoul.ai`
 const API_URL = `api.${env}.verisoul.ai`
@@ -77,9 +77,8 @@ export default function App() {
                 console.log("User did not complete session")
             }
         } catch (e) {
-            // User did not complete session or API call failed
-            console.log("Verify failed")
-            console.log(e)
+            console.error("Verify failed")
+            console.error(e)
         }
 
 
@@ -94,18 +93,24 @@ export default function App() {
         /*
         For example purposes only.
         Run this on the backend and pass session to the client
+        Optional - Pass in "id" query param to also prompt user for id verification
          */
         try {
-            const response = await fetch(`https://${API_URL}/liveness/session`, {
+            const faceSession = await fetch(`https://${API_URL}/liveness/session`, {
                 method: 'GET',
                 headers: headers,
             })
-            const json = await response.json()
+
+            // const faceAndIdSession = await fetch(`https://${API_URL}/liveness/session?id=true`, {
+            //     method: 'GET',
+            //     headers: headers,
+            // })
+
+            const json = await faceSession.json()
             setSessionId(json.session_id);
             setIsLoading(false);
         } catch (e) {
-            // User did not complete session or API call failed
-            console.log(e)
+            console.error(e)
         }
     }
 

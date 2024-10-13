@@ -20,6 +20,15 @@ Run the app via Expo either on a simulator or a physical device
 npx expo start
 ```
 
+## ID Check
+To run sample app with ID Check, simply add `?id=true` parameter to the get session URL:
+```javascript
+const faceAndIdSession = await fetch(`https://${API_URL}/liveness/session?id=true`, {
+    method: 'GET',
+    headers: headers,
+})
+```
+
 ## Documentation
 
-See [FaceMatch docs](https://docs.zerokyc.verisoul.ai/) for more information
+See [FaceMatch docs](https://docs.facematch.verisoul.ai/) for more information
