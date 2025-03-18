@@ -28,7 +28,3 @@ const faceAndIdSession = await fetch(`https://${API_URL}/liveness/session?id=tru
     headers: headers,
 })
 ```
-
-## Documentation
-
-See [FaceMatch docs](https://docs.facematch.verisoul.ai/) for more information
